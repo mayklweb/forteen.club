@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --white: "#F5F4EF";
+  --black: "#2A2928"
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100%А;
+  overflow-x: hidden;
+  color: var(--black);
+  background-color: var(--white);
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0px auto;
+  padding: 0px 20px;
+}
+
+p {
+  font-size: 14px;
+}
+
+button {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+image,
+video,
+source {
+  vertical-align: bottom;
+
+}
+
+@keyframes parallax {
+  from {
+    transform: translateY(-10%);
+  }
+
+  to {
+    transform: translateY(10%);
+  }
+}
+
+/* @supports (animation-timeline: view()) {
+  .parallax {
+    view-timeline: --p;
+  }
+
+  .parallax-img {
+    animation: parallax linear both;
+    animation-timeline: --p;
+  }
+} */
+
+@keyframes parallax {
+  from {
+    transform: translateY(calc(100svh - 100%));
+  }
+
+  to {
+    transform: translateY(calc(100% - 100svh));
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .parallax {
+    view-timeline: --p;
+  }
+
+  .parallax-img {
+    animation: parallax linear both;
+    animation-timeline: --p;
+  }
+}
