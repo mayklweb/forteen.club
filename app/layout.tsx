@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
-import { Poppins, EB_Garamond } from "next/font/google";
+import { Poppins, EB_Garamond, Inter, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import Provider from "@/provider";
 
-const sans = Poppins({
+// const sans = Poppins({
+//   subsets: ["latin"],
+//   weight: ["400", "500", "600", "700", "800"],
+//   variable: "--font-sans",
+// });
+
+const sans = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-sans",
 });
+
 const serif = EB_Garamond({
   subsets: ["latin"],
   weight: "400",

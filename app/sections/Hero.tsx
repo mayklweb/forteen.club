@@ -20,21 +20,23 @@ export function Hero() {
   const title = useRef<HTMLDivElement>(null);
   const loader = useRef<HTMLDivElement>(null);
 
+  console.log(title.current);
+
   useEffect(() => {
     const imgItems = images.current.filter(Boolean);
+    const titleLines =
+      title.current?.querySelectorAll(".hero-title-line") ?? [];
 
     const ctx = gsap.context(() => {
-      // gsap.set(loader, {
-      //   zIndex: 9999,
-      // });
+      gsap.set(titleLines, {
+        yPercent: 100,
+      });
 
       gsap.set(imgItems, {
-        scale: 0,
         rotate: (i) => rotatePositions[i],
       });
 
       gsap.set(video.current, {
-        scale: 0,
         rotate: 5.5,
       });
 
@@ -55,8 +57,8 @@ export function Hero() {
       tl.to(video.current, {
         scale: 1,
         rotate: 0,
-        duration: 0.8,
-        ease: "custom",
+        duration: 1,
+        ease: "0, 0, 0, 1",
       });
 
       tl.to(loader.current, {
@@ -67,6 +69,16 @@ export function Hero() {
           window.dispatchEvent(new Event("loaderComplete"));
         },
       });
+
+      tl.to(
+        titleLines,
+        {
+          yPercent: 0,
+          duration: 0.8,
+          ease: "0.3, 0, 0, 1",
+        },
+        "-=0.4",
+      );
     }, hero);
 
     return () => {
@@ -77,7 +89,7 @@ export function Hero() {
   return (
     <section
       ref={hero}
-      className="relative h-svh w-full overflow-hidden bg-[#F5F4EF]"
+      className="relative h-dvh w-full overflow-hidden bg-[#F5F4EF]"
     >
       <div ref={loader} className="bg-[#F5F4EF] w-full h-full relative z-[100]">
         {/* Intro images */}
@@ -87,7 +99,7 @@ export function Hero() {
             ref={(el) => {
               if (el) images.current[i] = el;
             }}
-            className="absolute left-1/2 top-1/2 h-[200px] w-[260px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl"
+            className="absolute left-1/2 top-1/2 h-[200px] w-[260px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl scale-0"
           >
             <img
               src="/media/image.png"
@@ -104,24 +116,27 @@ export function Hero() {
           muted
           playsInline
           preload="auto"
-          className="absolute inset-0  h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover scale-0"
         >
           <source src={VIDEO_URL} type="video/mp4" />
         </video>
       </div>
 
-      {/* Hero title */}
       <div
         ref={title}
         className="absolute inset-0 z-20 flex items-center justify-center px-5"
       >
-        <h1 className="text-center text-[clamp(4rem,9vw,9rem)] font-medium leading-[90%] tracking-tighter text-[#F5F4EF]">
-          <span className="">
-            <span className="hero-title-line block">Move with</span>
+        <h1 className="text-center text-[clamp(3rem,8vw,9rem)] font-medium  tracking-tighter text-[#F5F4EF]">
+          <span className="block overflow-hidden">
+            <span className="hero-title-line block leading-[80%] ">
+              Find freedom
+            </span>
           </span>
 
-          <span className="">
-            <span className="hero-title-line block">purpose.</span>
+          <span className="block overflow-hidden">
+            <span className="hero-title-line block leading-[120%] ">
+              in every move
+            </span>
           </span>
         </h1>
       </div>

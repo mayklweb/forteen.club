@@ -4,6 +4,7 @@ import { Header } from "./sections/Header";
 import { Hero } from "./sections/Hero";
 import { About } from "./sections/About";
 import { Activity } from "./sections/Activity";
+import { Contact } from "./sections/Contact";
 // import { Loader } from "@/components/Loader";
 
 export default function Page() {
@@ -16,6 +17,7 @@ export default function Page() {
         <Hero />
         <About />
         <Activity />
+        <Contact/>
       </main>
       <footer></footer>
     </>

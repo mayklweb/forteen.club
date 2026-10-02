@@ -31,7 +31,7 @@ export function Header() {
         <div className="flex w-full items-center justify-between">
           <button
             type="button"
-            className="flex gap-2 rounded-full bg-[#2A2928]/50 px-5 py-1.5 tracking-tight text-[#F5F4EF] backdrop-blur-[10px]"
+            className="flex gap-2 rounded-full bg-[#2A2928]/50 px-5 py-1.5 tracking-tight text-[#F5F4EF] backdrop:blur"
           >
             Menu
           </button>
@@ -40,7 +40,7 @@ export function Header() {
 
           <button
             type="button"
-            className="flex gap-2 rounded-full bg-[#2A2928]/50 px-5 py-2 tracking-tight text-[#F5F4EF] backdrop-blur-[10px]"
+            className="flex gap-2 rounded-full bg-[#2A2928]/50 px-5 py-2 tracking-tight text-[#F5F4EF] backdrop:blur-md"
           >
             Join Forteen
           </button>

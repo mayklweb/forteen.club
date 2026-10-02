@@ -6,23 +6,18 @@ export function About() {
     <section id="about" className="mt-40">
       <div className="container">
         <div className="w-full flex flex-col lg:flex-row gap-10">
-          <div className="w-[60%] flex flex-col justify-between">
-            <p className="text-[40px] leading-[120%] font-medium tracking-tight">
-              Forteen membership is about being part of an active community and
-              having more experiences to look forward to. Members get closer to
-              the people, activities, and moments that make the Forteen
-              lifestyle unique.
+          <div className="w-full lg:w-[60%] flex flex-col justify-between">
+            <p className="text-2xl lg:text-5xl font-bold tracking-tight">
+              MORE THAN A CLUB. <br /> A COMMUNITY IN MOTION.
             </p>
-            <p className="w-[60%] text-[16px] leading-[120%]">
-              From organized rides, runs, hikes, and snowboarding trips to
-              international travel, private dinners, and social events —
-              membership opens the door to experiences designed to bring people
-              together. Meet like-minded people. Discover new places. Try
-              something different. Build connections that go beyond the
-              activity.
+            <p className="w-full lg:w-[60%] text-base leading-[120%] mt-10">
+              Forteen brings people together through movement, experiences, and
+              shared moments. From hiking and running to parties, trips,
+              dinners, and more — every event is an opportunity to meet new
+              people and experience something different together.
             </p>
           </div>
-          <div className="w-[40%]">
+          <div className="w-full lg:w-[40%]">
             <Image
               src={
                 "https://quechua-lookbook.com/ss25/wp-content/uploads/2025/02/Image-Footer.png"

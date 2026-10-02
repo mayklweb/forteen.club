@@ -2,7 +2,7 @@
   "name": "forteen-club",
   "private": true,
   "scripts": {
-    "dev": "next dev -H 192.168.1.5",
+    "dev": "next dev ",
     "build": "next build",
     "start": "next start"
   },
